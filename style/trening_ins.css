@@ -1,0 +1,47 @@
+body form input,
+body form select,
+body form textarea {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  justify-content: center;
+  margin: 20px auto;
+}
+form {
+  margin: 0 auto;
+  width: 50%;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+}
+form input {
+  margin-bottom: 1em;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+}
+form input:focus {
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+}
+form input[type="submit"] {
+  width: 100%;
+  padding: 1em;
+  border-radius: 0.5em;
+  border: none;
+  background: #4caf50;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+form input[type="submit"]:hover {
+  background: #47a447;
+}
+form input[type="submit"]:active {
+  background: #499249;
+}
+form input[type="submit"]:focus {
+  outline: none;
+}
