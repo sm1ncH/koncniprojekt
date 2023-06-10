@@ -5,10 +5,9 @@ $id = $_POST['id'];
 $ime = $_POST['ime'];
 $opis = $_POST['opis'];
 $datum = $_POST['datum'];
-$kraj_id = $_POST['kraj_id'];
-$lokacija_id = $_POST['lokacija_id'];
-$uporabnik_id = $_POST['uporabnik_id'];
-$sql = "UPDATE treningi SET ime='$ime', opis='$opis', datum='$datum', kraj_id='$kraj_id', lokacija_id='$lokacija_id', uporabnik_id='$uporabnik_id' WHERE id=$id;";
+$kraj = $_POST['kraj'];
+$lokacija = $_POST['lokacija'];
+$sql = "UPDATE treningi SET ime='$ime', opis='$opis', datum='$datum', kraj_id = (select id from kraji k where k.id = '$kraj'), lokacija_id = (SELECT id FROM lokacije l WHERE id='$lokacija')";
 mysqli_query($link, $sql);
 header("Location: treningi_overlook.php");
 ?>

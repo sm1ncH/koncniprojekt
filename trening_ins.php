@@ -8,7 +8,7 @@
     <title>Document</title>
   </head>
   <body>
-    <form action="trening_upload.php" method="post">
+    <form action="trening_upload.php" method="post" enctype="multipart/form-data">
       <input type="text" name="ime" id="ime" placeholder="IME" />
       <input type="text" name="opis" placeholder="OPIS" />
       <input type="date" name="datum" id="datum" placeholder="DATUM" />

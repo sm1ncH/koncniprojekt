@@ -22,8 +22,13 @@ require_once 'cookie.php';
         //header("Location:index.html");
     }
     else{
-        echo "<script type='text/javascript'>alert('Login failed!');
-        window.location.href='login.html';</script>";
+        // window popup that dissapears after 3 seconds
+        echo "<script type='text/javascript'>
+        alert('Login failed!');
+        window.location.href='index.php';
+        </script>";
+
+
         //header("Location:index.html");
     }
 // }

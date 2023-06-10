@@ -64,7 +64,7 @@
         echo "<h1 id='naslov'>Projekt Jure Petronijevič!</h1>";
       }
       ?>
-    </div>*
+    </div>
     <div id="vsebina">
       <h1>Treningi</h1>
       <!-- naredi p in opiši v slovenščini kaj je trening -->

@@ -6,13 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style/login.css" />
     <title>Document</title>
+    <style>
+      input {
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f1f1f1;
+      }
+      #subm {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f1f1f1;
+      }
+      #subm:hover {
+        background-color: #ddd;
+      }
+      form {
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10vh;
+      }
+    </style>
   </head>
   <body>
     <nav id="navigacija">
       <ul>
         <li><img src="slike/logo.png" alt="" /></li>
         <li><a href="index.php">Home</a></li>
-        <li><a href="trening_upload.html">Trening</a></li>
         <li><a href="login.html">Login</a></li>
       </ul>
     </nav>
@@ -24,10 +54,10 @@
         id="password"
         placeholder="PASSWORD"
       />
-      <input type="submit" value="Login" />
+      <input type="submit" value="Login" id="subm" />
+      <p>
+        Še nisi bil registriran? <a href="signup.php">Tukaj se registriraj</a>
+      </p>
     </form>
-    <p>
-      Še nisi bil registriran? <a href="signup.php">Tukaj se registriraj</a>
-    </p>
   </body>
 </html>

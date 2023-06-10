@@ -5,6 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      input {
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f1f1f1;
+      }
+      #subm {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f1f1f1;
+      }
+      #subm:hover {
+        background-color: #ddd;
+      }
+      form {
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10vh;
+      }
+      select {
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        padding: 20px;
+        border-radius: 5px;
+        background-color: #f1f1f1;
+      }
+      #submit:hover {
+        background-color: #ddd;
+      }
+    </style>
   </head>
   <body>
     <nav>
@@ -30,7 +73,7 @@
           ?>
           
       </select>
-      <input type="submit" value="Register" />
+      <input type="submit" value="Register" id="submit"/>
     </form>
   </body>
 </html>

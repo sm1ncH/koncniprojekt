@@ -77,9 +77,30 @@ if ($_SESSION['idu'] == 3) {
                             echo '<td>' . $row['ime'] . '</td>';
                             echo '<td>' . $row['opis'] . '</td>';
                             echo '<td>' . $row['datum'] . '</td>';
-                            echo '<td>' . $row['kraj_id'] . '</td>';
-                            echo '<td>' . $row['lokacija_id'] . '</td>';
-                            echo '<td>' . $row['uporabnik_id'] . '</td>';
+                            $sql2 = 'SELECT kraj FROM kraji WHERE id = ' . $row['kraj_id'] . ';';
+                            $result2 = mysqli_query($link, $sql2);
+                            $row2 = mysqli_fetch_array($result2);
+                            echo '<td>' . $row2['kraj'] . '</td>';
+                            $sql3 = 'SELECT lokacija FROM lokacije WHERE id = ' . $row['lokacija_id'] . ';';
+                            $result3 = mysqli_query($link, $sql3);
+                            $row3 = mysqli_fetch_array($result3);
+                            echo '<td>' . $row3['lokacija'] . '</td>';
+                            $sql4 = 'SELECT ime FROM uporabniki WHERE id = ' . $row['uporabnik_id'] . ';';
+                            $result4 = mysqli_query($link, $sql4);
+                            $row4 = mysqli_fetch_array($result4);
+                            
+                            
+                            if($row['slika_id'] != null){
+                                $sql5 = 'SELECT url FROM slike WHERE id = ' . $row['slika_id'] . ';';
+                            $result5 = mysqli_query($link, $sql5);
+                            $row5 = mysqli_fetch_array($result5);
+                                echo '<td><img src="slike/' . $row5['url'] . '" alt="" width="100px"></td>';
+                            }
+                            else{
+                                echo '<td><img src="slike/default.jpg" alt="" width="100px"></td>';
+                            }
+
+                            echo '<td>' . $row4['ime'] . '</td>';
                             if ($admin == true){
                                 echo '<td><a href="trening_edit.php?id=' . $row['id'] . '">Uredi</a></td>';
                             }
