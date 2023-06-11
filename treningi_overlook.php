@@ -16,6 +16,14 @@ if ($_SESSION['idu'] == 3) {
     <title>Document</title>
     <link rel="stylesheet" href="style/treningi_overlook.css">
     <link rel="stylesheet" href="style/default.css">
+    <style>
+        body {
+    background-image: url("slike/wave-haikei.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+    </style>
 </head>
 <body>
     <!-- Tu bo še nav -->

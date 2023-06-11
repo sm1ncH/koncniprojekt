@@ -9,9 +9,16 @@ require_once 'cookie.php';
     
     if(mysqli_num_rows($result)==1){
         // window popup
-        echo "<script type='text/javascript'>alert('Login successful!');
-        window.location.href='index.php';
-        </script>";
+        echo "<p style='
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f1f1f1;
+        '>Uspešna prijava!</p>";
+        header("refresh:2;url=index.php");
         $row=mysqli_fetch_array($result);
         $_SESSION['idu']=$row['id'];
         $_SESSION['name']=$row['ime'];
@@ -22,11 +29,16 @@ require_once 'cookie.php';
         //header("Location:index.html");
     }
     else{
-        // window popup that dissapears after 3 seconds
-        echo "<script type='text/javascript'>
-        alert('Login failed!');
-        window.location.href='index.php';
-        </script>";
+        echo "<p style='
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f1f1f1;
+        '>Napačen email ali geslo!</p>";
+        header("refresh:2;url=login.html");
 
 
         //header("Location:index.html");
