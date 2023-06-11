@@ -55,7 +55,6 @@ if ($_SESSION['idu'] == 3) {
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 id="naslov">Treningi</h1>
                 <table class="table table-striped">
                     <thead>
                         <tr>
