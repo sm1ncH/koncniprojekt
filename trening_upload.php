@@ -74,12 +74,15 @@ if ($stmt->execute()) {
                     $stmt4->bind_param('ii', $slika_id, $trening_id);
                     if ($stmt4->execute()) {
                         setcookie('error',"Vnos uspešen.");
-                        header('Location: trening_overlook.php');
+                        header("refresh:3;url=treningi_overlook.php");
                     } else {
                         echo "Vnos ni uspel";
+                        // redirect after 3 seconds
+                        header("refresh:3;url=index.php");
                     }
                 } else {
                     echo "Vnos ni uspel";
+                    header("refresh:3;url=index.php");
                 }
             } else
                 setcookie('error','There was some error moving the file to the upload directory. Please make sure the upload directory is writable by the web server.') ;

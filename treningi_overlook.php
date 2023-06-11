@@ -15,6 +15,7 @@ if ($_SESSION['idu'] == 3) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style/treningi_overlook.css">
+    <link rel="stylesheet" href="style/default.css">
 </head>
 <body>
     <!-- Tu bo še nav -->
@@ -54,15 +55,17 @@ if ($_SESSION['idu'] == 3) {
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1>Treningi</h1>
+                <h1 id="naslov">Treningi</h1>
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Ime</th>
+                            <th>Slika</th>
+                            <th>Ime treninga</th>
                             <th>Opis</th>
                             <th>Datum</th>
                             <th>Kraj</th>
                             <th>Lokacija</th>
+                            
                             <th>Uporabnik</th>
                         </tr>
                     </thead>
@@ -74,6 +77,17 @@ if ($_SESSION['idu'] == 3) {
                         $result = mysqli_query($link, $sql);
                         while ($row = mysqli_fetch_array($result)) {
                             echo '<tr>';
+                            
+
+                            if($row['slika_id'] != null){
+                                $sql5 = 'SELECT url FROM slike WHERE id = ' . $row['slika_id'] . ';';
+                            $result5 = mysqli_query($link, $sql5);
+                            $row5 = mysqli_fetch_array($result5);
+                                echo '<td><img src="' . $row5['url'] . '" alt="" width="100px" height="100px"></td>';
+                            }
+                            else{
+                                echo '<td id="ced"><img src="slike/default.jpg" alt="" width="100px"></td>';
+                            }
                             echo '<td>' . $row['ime'] . '</td>';
                             echo '<td>' . $row['opis'] . '</td>';
                             echo '<td>' . $row['datum'] . '</td>';
@@ -90,21 +104,18 @@ if ($_SESSION['idu'] == 3) {
                             $row4 = mysqli_fetch_array($result4);
                             
                             
-                            if($row['slika_id'] != null){
-                                $sql5 = 'SELECT url FROM slike WHERE id = ' . $row['slika_id'] . ';';
-                            $result5 = mysqli_query($link, $sql5);
-                            $row5 = mysqli_fetch_array($result5);
-                                echo '<td><img src="slike/' . $row5['url'] . '" alt="" width="100px"></td>';
-                            }
-                            else{
-                                echo '<td><img src="slike/default.jpg" alt="" width="100px"></td>';
-                            }
+                            
 
                             echo '<td>' . $row4['ime'] . '</td>';
                             if ($admin == true){
+                                echo '<td><a href="trening_overlook.php?id=' . $row['id'] . '">Poglej</a></td>';
                                 echo '<td><a href="trening_edit.php?id=' . $row['id'] . '">Uredi</a></td>';
+                                echo '<td id="col"><a href="trening_delete.php?id=' . $row['id'] . '">Izbriši</a></td>';
                             }
-
+                            else{
+                                echo '<td id="col"><a href="trening_overlook.php?id=' . $row['id'] . '">Poglej</a></td>';
+                            }
+                            
                             echo '</tr>';
                         }
                         

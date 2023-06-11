@@ -11,6 +11,7 @@ $row = mysqli_fetch_array($result);
 <head>
     <meta charset="UTF-8">
     <title>Treningi</title>
+    <link rel="stylesheet" href="style/default.css">
 </head>
 <body>
     <h1>Uredi trening</h1>
