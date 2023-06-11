@@ -48,14 +48,59 @@
       #submit:hover {
         background-color: #ddd;
       }
+      * {
+  margin: 0;
+  padding: 0;
+}
+#navigacija {
+  background-color: #002233;
+  overflow: hidden;
+  height: 60px;
+}
+#navigacija a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  height: 25px;
+  padding-top: 20px;
+  transition: ease 0.5s all;
+  border-radius: 20px;
+}
+#navigacija a:hover {
+  background-color: #ddd;
+  color: black;
+}
+#navigacija ul li {
+  display: inline-block;
+  list-style: none;
+  display: inline;
+  align-items: right;
+  border-radius: 20px;
+}
+#navigacija ul li img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  float: right;
+  padding-top: 5px;
+  transition: ease 0.5s all;
+}
+#navigacija ul li img:hover {
+  transform: scale(1.2);
+}
+
     </style>
   </head>
   <body>
-    <nav>
-      <div><img src="" alt=""></div>
-      <div>
-      <a href="index.php">Home</a>
-      </div>
+  <nav id="navigacija">
+      <ul>
+        <li><img src="slike/logo.png" alt="" /></li>
+        <li><a href="index.php">Home</a></li>
+      </ul>
     </nav>
     <form action="register.php" method="post">
       <input type="text" name="name" placeholder="Name" required />

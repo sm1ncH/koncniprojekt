@@ -12,22 +12,74 @@ $row = mysqli_fetch_array($result);
     <meta charset="UTF-8">
     <title>Treningi</title>
     <link rel="stylesheet" href="style/default.css">
+    <link rel="stylesheet" href="style/treningi_edit.css">
+    <style>
+        body {
+            background-color: #002233;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        .inp{
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #002233;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .submit{
+            margin-right: 20px;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #002233;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .submit:hover{
+            background-color: #003366;
+        }
+        button{
+            margin-right: 20px;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #002233;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button:hover{
+            background-color: #003366;
+        }
+        button a{
+            text-decoration: none;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <h1>Uredi trening</h1>
     <form action="trening_update.php" method="post">
-        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+        <input class="inp" type="hidden" name="id" value="<?php echo $row['id']; ?>">
         <label for="ime">Ime</label>
-        <input type="text" name="ime" id="ime" value="<?php echo $row['ime']; ?>">
+        <input class="inp" type="text" name="ime" id="ime" value="<?php echo $row['ime']; ?>">
         <br>
         <label for="opis">Opis</label>
-        <input type="text" name="opis" id="opis" value="<?php echo $row['opis']; ?>">
+        <input class="inp" type="text" name="opis" id="opis" value="<?php echo $row['opis']; ?>">
         <br>
         <label for="datum">Datum</label>
-        <input type="date" name="datum" id="datum" value="<?php echo $row['datum']; ?>">
+        <input class="inp" type="date" name="datum" id="datum" value="<?php echo $row['datum']; ?>">
         <br>
         <label for="kraj">Kraj</label>
-        <select name="kraj" id="kraj">
+        <select class="inp" name="kraj" id="kraj">
             <?php
             $sql2 = 'SELECT * FROM kraji;';
             $result2 = mysqli_query($link, $sql2);
@@ -42,7 +94,7 @@ $row = mysqli_fetch_array($result);
         </select>
         <br>
         <label for="lokacija">Lokacija</label>
-        <select name="lokacija" id="lokacija">
+        <select class="inp" name="lokacija" id="lokacija">
             <?php
             $sql3 = 'SELECT * FROM lokacije;';
             $result3 = mysqli_query($link, $sql3);
@@ -56,7 +108,8 @@ $row = mysqli_fetch_array($result);
             ?>
         </select>
         <br>
-        <input type="submit" value="Posodobi">
+        <input class="submit" type="submit" value="Posodobi">
     </form>
+    <a href="treningi_overlook.php"><button>Nazaj</button></a>
 </body>
 </html>

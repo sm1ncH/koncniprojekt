@@ -2,8 +2,14 @@
   margin: 0;
   padding: 0;
 }
+body {
+  background-image: url("slike/wave-haikei.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 #navigacija {
-  background-color: #333;
+  background-color: #002233;
   overflow: hidden;
   height: 60px;
 }
@@ -14,9 +20,10 @@
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-  height: 60px;
+  height: 25px;
   padding-top: 20px;
   transition: ease 0.5s all;
+  border-radius: 20px;
 }
 #navigacija a:hover {
   background-color: #ddd;
@@ -27,6 +34,7 @@
   list-style: none;
   display: inline;
   align-items: right;
+  border-radius: 20px;
 }
 #navigacija ul li img {
   width: 50px;
